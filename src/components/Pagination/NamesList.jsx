@@ -2,7 +2,7 @@ const NamesList = ({ currentName }) => {
   console.log(currentName);
   return (
     <div className="pagination-container">
-      <h2>Day 4: Pagination Component</h2>
+      <h3>Day 4: Pagination Component</h3>
       {currentName.map((d) => {
         return (
           <ul>
