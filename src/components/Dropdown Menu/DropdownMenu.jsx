@@ -30,6 +30,7 @@ function DropdownMenu() {
 
   return (
     <div className="menu-container" ref={menuRef}>
+      <h3>Dropdown Menu</h3>
       <div
         className="menu-trigger"
         onClick={() => {
