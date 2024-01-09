@@ -3,6 +3,7 @@ import DropdownMenu from "./components/Dropdown Menu/DropdownMenu";
 import Modal from "./components/Modal/Modal";
 import Pagination from "./components/Pagination/Pagination";
 import Slider from "./components/Slider/Slider";
+import Tabs from "./components/Tabs Component/Tabs";
 import ToggleSwitch from "./components/Toggle Switch/ToggleSwitch";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Pagination />
       <ToggleSwitch />
       <DropdownMenu />
+      <Tabs />
     </>
   );
 }
