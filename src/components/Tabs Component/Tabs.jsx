@@ -47,8 +47,7 @@ const Tabs = () => {
         {activeTab === 3 && (
           <p>
             Tab 3: A storm is a powerful and atmospheric disturbance, often
-            characterized by strong winds and heavy rain. Storms can take
-            various forms, including hurricanes, tornadoes, and thunderstorms.
+            characterized by strong winds and heavy rain.
           </p>
         )}
       </div>
