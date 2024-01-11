@@ -1,0 +1,21 @@
+.notification {
+  padding: 16px;
+  margin: 16px 0;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s ease-in-out;
+}
+
+.notification.success {
+  background-color: #4caf50;
+}
+
+.notification.error {
+  background-color: #f44336;
+}
+
+.notification.warning {
+  background-color: #ff9800;
+}
