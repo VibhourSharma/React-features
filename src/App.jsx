@@ -7,6 +7,7 @@ import Pagination from "./components/Pagination/Pagination";
 import Slider from "./components/Slider/Slider";
 import Tabs from "./components/Tabs Component/Tabs";
 import ToggleSwitch from "./components/Toggle Switch/ToggleSwitch";
+import FileUploadComponent from "./components/File Upload/FileUploadComponent";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Tabs />
       <DatePicker />
       <Notifications />
+      <FileUploadComponent />
     </>
   );
 }
