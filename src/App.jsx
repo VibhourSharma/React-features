@@ -8,6 +8,8 @@ import Slider from "./components/Slider/Slider";
 import Tabs from "./components/Tabs Component/Tabs";
 import ToggleSwitch from "./components/Toggle Switch/ToggleSwitch";
 import FileUploadComponent from "./components/File Upload/FileUploadComponent";
+import Progress from "./components/Progress Bar/Progress";
+import Tooltip from "./components/Tool Tip/Tooltip";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
       <DatePicker />
       <Notifications />
       <FileUploadComponent />
+      <Progress />
+      <Tooltip />
     </>
   );
 }

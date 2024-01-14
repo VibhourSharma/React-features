@@ -4,14 +4,17 @@ import "./Tooltip.css";
 
 const Tooltip = () => {
   return (
-    <div className="tooltip">
-      <button>Alert</button>
-      <ToolTipText text={"working text I am working"}>
-        <span>
-          <FaInfoCircle />
-          info
-        </span>
-      </ToolTipText>
+    <div className="tooltip-main">
+      <h3>/Tooltip</h3>
+      <div>
+        <button>Alert</button>
+        <ToolTipText text={"Information text reagrding the tooltip"}>
+          <span>
+            <FaInfoCircle />
+            info
+          </span>
+        </ToolTipText>
+      </div>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const ToolTipText = ({ text, Children }) => {
+const ToolTipText = ({ text, children }) => {
   const [isVisible, setIsVisible] = useState(false);
   return (
     <div
@@ -8,7 +8,7 @@ const ToolTipText = ({ text, Children }) => {
       onMouseEnter={() => setIsVisible(true)}
       onMouseLeave={() => setIsVisible(false)}
     >
-      {Children}
+      {children}
       {isVisible && <div className="tooltip">{text}</div>}
     </div>
   );
