@@ -10,6 +10,7 @@ import ToggleSwitch from "./components/Toggle Switch/ToggleSwitch";
 import FileUploadComponent from "./components/File Upload/FileUploadComponent";
 import Progress from "./components/Progress Bar/Progress";
 import Tooltip from "./components/Tool Tip/Tooltip";
+import Autocomplete from "./components/Auto Complete/AutoComplete";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
       <FileUploadComponent />
       <Progress />
       <Tooltip />
+      <Autocomplete />
     </>
   );
 }
