@@ -11,6 +11,7 @@ import FileUploadComponent from "./components/File Upload/FileUploadComponent";
 import Progress from "./components/Progress Bar/Progress";
 import Tooltip from "./components/Tool Tip/Tooltip";
 import Autocomplete from "./components/Auto Complete/AutoComplete";
+import DragDrop from "./components/Drag Drop/DragDrop";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
       <Progress />
       <Tooltip />
       <Autocomplete />
+      <DragDrop />
     </>
   );
 }
