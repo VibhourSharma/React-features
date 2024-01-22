@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Autocomplete.css";
+import "./AutoComplete.css";
 
 const suggestions = [
   "Apple",
