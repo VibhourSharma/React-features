@@ -12,6 +12,13 @@ h4 {
   margin-bottom: 0.75rem;
 }
 
+.accordion-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @media screen and (min-width: 800px) {
   h3 {
     font-size: 1.75rem;
@@ -37,7 +44,6 @@ h4 {
   line-height: 1.5;
   font-size: 0.875rem;
   width: 90vw;
-  margin: 5rem auto;
   border-radius: 20px;
   padding: 2.5rem 2rem;
   max-width: 920px;

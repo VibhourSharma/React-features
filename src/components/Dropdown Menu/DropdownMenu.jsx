@@ -1,3 +1,4 @@
+import React, { useState, useEffect, useRef } from "react";
 import user from "./img/user.png";
 import edit from "./img/edit.png";
 import inbox from "./img/envelope.png";
@@ -6,27 +7,32 @@ import help from "./img/question.png";
 import logout from "./img/log-out.png";
 import "./DropdownMenu.css";
 
-import React, { useState, useEffect, useRef } from "react";
+const items = [
+  { img: user, text: "My Profile" },
+  { img: edit, text: "Edit Profile" },
+  { img: inbox, text: "Inbox" },
+  { img: settings, text: "Settings" },
+  { img: help, text: "Help" },
+  { img: logout, text: "Logout" },
+];
 
 function DropdownMenu() {
   const [open, setOpen] = useState(false);
-
-  let menuRef = useRef();
+  const menuRef = useRef();
 
   useEffect(() => {
-    let handler = (e) => {
+    const handleOutsideClick = (e) => {
       if (!menuRef.current.contains(e.target)) {
         setOpen(false);
-        console.log(menuRef.current);
       }
     };
 
-    document.addEventListener("mousedown", handler);
+    document.addEventListener("mousedown", handleOutsideClick);
 
     return () => {
-      document.removeEventListener("mousedown", handler);
+      document.removeEventListener("mousedown", handleOutsideClick);
     };
-  });
+  }, []);
 
   return (
     <div className="menu-container" ref={menuRef}>
@@ -37,7 +43,7 @@ function DropdownMenu() {
           setOpen(!open);
         }}
       >
-        <img src={user}></img>
+        <img src={user} alt="User" />
       </div>
 
       <div className={`dropdown-menu ${open ? "active" : "inactive"}`}>
@@ -47,23 +53,20 @@ function DropdownMenu() {
           <span>Frontend developer</span>
         </h3>
         <ul>
-          <DropdownItem img={user} text={"My Profile"} />
-          <DropdownItem img={edit} text={"Edit Profile"} />
-          <DropdownItem img={inbox} text={"Inbox"} />
-          <DropdownItem img={settings} text={"Settings"} />
-          <DropdownItem img={help} text={"Helps"} />
-          <DropdownItem img={logout} text={"Logout"} />
+          {items.map((item, index) => (
+            <DropdownItem key={index} img={item.img} text={item.text} />
+          ))}
         </ul>
       </div>
     </div>
   );
 }
 
-function DropdownItem(props) {
+function DropdownItem({ img, text }) {
   return (
     <li className="dropdownItem">
-      <img src={props.img}></img>
-      <a> {props.text} </a>
+      <img src={img} alt={text} />
+      <a> {text} </a>
     </li>
   );
 }

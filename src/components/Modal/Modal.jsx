@@ -22,7 +22,7 @@ const Card = () => {
             <img src={URL} alt="Lion Image" />
           </div>
           <h2>Lion</h2>
-          <p>Day:2 - Majestic and powerful, the lion commands the wild.</p>
+          <p>Day:2 - Click on Description button to open Modal</p>
           <button onClick={openModal}>Description</button>
         </div>
       </div>

@@ -1,44 +1,55 @@
 import React, { useState } from "react";
 import "./Autocomplete.css";
 
+const suggestions = [
+  "Apple",
+  "Banana",
+  "Orange",
+  "Grapes",
+  "Pineapple",
+  "Strawberry",
+  "Watermelon",
+  "Mango",
+  "Kiwi",
+  "Peach",
+  "Pear",
+  "Cherry",
+  "Blueberry",
+  "Raspberry",
+  "Blackberry",
+];
+
 const Autocomplete = () => {
   const [inputValue, setInputValue] = useState("");
   const [filteredSuggestions, setFilteredSuggestions] = useState([]);
-
-  const suggestions = [
-    "Apple",
-    "Banana",
-    "Orange",
-    "Grapes",
-    "Pineapple",
-    "Strawberry",
-    "Watermelon",
-    "Mango",
-    "Kiwi",
-    "Peach",
-    "Pear",
-    "Cherry",
-    "Blueberry",
-    "Raspberry",
-    "Blackberry",
-    "Avocado",
-    "Pomegranate",
-    "Plum",
-    "Apricot",
-  ];
+  const [showSuggestions, setShowSuggestions] = useState(false);
 
   const handleChange = (event) => {
     const input = event.target.value;
     setInputValue(input);
-    const filtered = suggestions.filter((suggestion) =>
-      suggestion.toLowerCase().includes(input.toLowerCase())
-    );
-    setFilteredSuggestions(filtered);
+    updateFilteredSuggestions(input);
   };
 
   const handleSelect = (selectedSuggestion) => {
     setInputValue(selectedSuggestion);
     setFilteredSuggestions([]);
+    setShowSuggestions(false);
+  };
+
+  const handleInputFocus = () => {
+    setShowSuggestions(true);
+  };
+
+  const handleInputBlur = () => {
+    setTimeout(() => setShowSuggestions(false), 200);
+  };
+
+  const updateFilteredSuggestions = (input) => {
+    const filtered = suggestions.filter((suggestion) =>
+      suggestion.toLowerCase().includes(input.toLowerCase())
+    );
+    setFilteredSuggestions(filtered);
+    setShowSuggestions(true);
   };
 
   return (
@@ -49,15 +60,19 @@ const Autocomplete = () => {
           type="text"
           value={inputValue}
           onChange={handleChange}
+          onFocus={handleInputFocus}
+          onBlur={handleInputBlur}
           placeholder="Type to search..."
         />
-        <ul>
-          {filteredSuggestions.map((suggestion, index) => (
-            <li key={index} onClick={() => handleSelect(suggestion)}>
-              {suggestion}
-            </li>
-          ))}
-        </ul>
+        {showSuggestions && (
+          <ul>
+            {filteredSuggestions.map((suggestion, index) => (
+              <li key={index} onClick={() => handleSelect(suggestion)}>
+                {suggestion}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   );

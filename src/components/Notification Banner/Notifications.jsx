@@ -16,24 +16,28 @@ const Notification = () => {
 
   return (
     <div className="notification">
-      <button
-        className="notification-button success"
-        onClick={() => showNotification("success")}
-      >
-        Show Success
-      </button>
-      <button
-        className="notification-button warning"
-        onClick={() => showNotification("warning")}
-      >
-        Show Warning
-      </button>
-      <button
-        className="notification-button error"
-        onClick={() => showNotification("error")}
-      >
-        Show Error
-      </button>
+      <h3>/ Notification Banner</h3>
+      <p>click on any button below</p>
+      <div>
+        <button
+          className="notification-button success"
+          onClick={() => showNotification("success")}
+        >
+          Show Success
+        </button>
+        <button
+          className="notification-button warning"
+          onClick={() => showNotification("warning")}
+        >
+          Show Warning
+        </button>
+        <button
+          className="notification-button error"
+          onClick={() => showNotification("error")}
+        >
+          Show Error
+        </button>
+      </div>
 
       <div
         className={`notification-container ${
